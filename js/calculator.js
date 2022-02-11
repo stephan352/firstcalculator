@@ -14,7 +14,6 @@ class Calculator {
         this.righthandinput.innerText = "";
 
         this.lowerline.innerText = "";
-        this.operation = undefined;
     }
 
     append_number(number) {
