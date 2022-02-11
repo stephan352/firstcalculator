@@ -46,3 +46,7 @@ body {
     word-break: break-all;
     text-align: right;
 }
+
+#firstline {
+    display: flex;
+}
