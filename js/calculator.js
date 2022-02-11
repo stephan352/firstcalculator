@@ -49,13 +49,29 @@ class Calculator {
             this.lefthandinput.innerText = this.lefthandinput.innerText.slice(0, -1)
         }
     }
+
+    compute() {
+        if (this.oper.innerText == "+") {
+            let answer = Number(this.lefthandinput.innerText) + Number(this.righthandinput.innerText);
+            this.lowerline.innerText = answer;
+        } else if (this.oper.innerText == "-") {
+            let answer = Number(this.lefthandinput.innerText) - Number(this.righthandinput.innerText);
+            this.lowerline.innerText = String(answer);
+        } else if (this.oper.innerText == "x") {
+            let answer = Number(this.lefthandinput.innerText)*Number(this.righthandinput.innerText);
+            this.lowerline.innerText = String(answer);
+        } else if (this.oper.innerText == "÷") {
+            let answer = Number(this.lefthandinput.innerText)/Number(this.righthandinput.innerText);
+            this.lowerline.innerText = String(answer);
+        }
+    }
 }
 
 const numberButton = document.querySelectorAll('[number]');
 const operandButton = document.querySelectorAll('[operand]');
 const clearButton = document.querySelector('[clear]');
 const delButton = document.querySelector('[delete]');
-const equalsButton = document.querySelectorAll('[equals]');
+const equalsButton = document.querySelector('[equals]');
 const secondoperand = document.querySelector('[secondline]');
 const input = [document.querySelector('[lefthand]'), document.querySelector('[symbol]'), document.querySelector('[righthand]')];
 
@@ -80,4 +96,8 @@ operandButton.forEach(button => {
 
 delButton.addEventListener("click", () => {
     calculator.delete();
+})
+
+equalsButton.addEventListener("click", () => {
+    calculator.compute();
 })
